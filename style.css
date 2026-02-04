@@ -170,18 +170,18 @@ li a:hover {
 /*Text section_2*/
 
 .text_section_2 {
-  margin-bottom: 60px;
+  max-width: 1200px;
+  margin: 50px auto;
   color: rgb(74, 105, 84);
-  font-family:
-    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
-  margin-top: 60px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 80px;
 }
 
+.text_section_2 h1 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
 .text_section_2 img {
   width: 50px;
 }
@@ -192,10 +192,15 @@ li a:hover {
 
 .image_and_text {
   margin-top: 60px;
+  margin-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 150px;
+}
+
+.image_and_text h1 {
+  margin-bottom: 15px;
 }
 .image_and_text img {
   max-width: 600px;
@@ -206,12 +211,25 @@ li a:hover {
 #text_and_text {
   max-width: 600px;
 }
+
+.hamburger {
+  max-width: 350px;
+}
+
+.fast_food {
+  max-width: 350px;
+}
+.binary {
+  max-width: 350px;
+}
+
 /*Image and text*/
 
 /*Footer*/
 
 .footer {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
