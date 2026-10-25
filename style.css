@@ -10,6 +10,7 @@ body {
   font-family:
     "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
     Arial, sans-serif;
+  line-height: 1.5;
 }
 
 /*Header*/
@@ -18,14 +19,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0px;
+  gap: 24px;
+  padding: 0 24px;
 }
 
 .logo {
-  padding: 20px;
+  padding: 12px 0;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 .logo h1 {
   color: rgb(74, 105, 84);
@@ -40,17 +49,19 @@ body {
 
 .navbar li {
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 12px;
 }
 
 .btn {
-  padding: 20px;
+  padding: 12px 0;
+  flex-shrink: 0;
 }
 
 button {
   background-color: rgb(44, 122, 96);
-  width: 200px;
-  height: 50px;
+  min-width: 180px;
+  min-height: 48px;
+  padding: 10px 16px;
   border-radius: 10px;
   border: none;
   color: aliceblue;
@@ -121,11 +132,11 @@ li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin: 40px 20px 0;
   text-align: center;
 }
 .text_section h1 {
-  font-size: 4rem;
+  font-size: clamp(2.25rem, 6vw, 4rem);
   color: rgb(74, 105, 84);
   font-family:
     "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
@@ -134,6 +145,7 @@ li a:hover {
 
 .text_section p {
   max-width: 550px;
+  margin-top: 8px;
   font-size: 20px;
   font-weight: normal;
   color: rgb(74, 105, 84);
@@ -146,15 +158,15 @@ li a:hover {
 /*Image section*/
 
 .image_section {
-  margin-top: 40px;
+  margin: 40px 20px 0;
 }
 
 .image_section img {
-  width: 600px;
+  width: min(100%, 600px);
   display: block;
   margin: 0 auto;
   border-radius: 20px;
-  border: 15px solid #f1fdfd;
+  border: 12px solid #f1fdfd;
 }
 /*Image section*/
 
@@ -165,17 +177,18 @@ li a:hover {
     Arial, sans-serif;
   margin-top: 60px;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 /*Text section_2*/
 
 .text_section_2 {
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 40px auto;
+  padding: 0 24px;
   color: rgb(74, 105, 84);
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  gap: clamp(24px, 5vw, 80px);
 }
 
 .text_section_2 h1 {
@@ -184,6 +197,8 @@ li a:hover {
 }
 .text_section_2 img {
   width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 /*Text section_2*/
@@ -191,21 +206,24 @@ li a:hover {
 /*Image and text*/
 
 .image_and_text {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 150px;
+  gap: clamp(24px, 8vw, 100px);
 }
 
 .image_and_text h1 {
   margin-bottom: 15px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 .image_and_text img {
-  max-width: 600px;
+  display: block;
+  width: min(50%, 600px);
   border-radius: 20px;
-  border: 15px solid #f1fdfd;
+  border: 12px solid #f1fdfd;
 }
 
 #text_and_text {
@@ -213,14 +231,17 @@ li a:hover {
 }
 
 .hamburger {
-  max-width: 350px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .fast_food {
-  max-width: 350px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 .binary {
-  max-width: 350px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 /*Image and text*/
@@ -229,7 +250,8 @@ li a:hover {
 
 .footer {
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+  padding: 0 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,13 +270,14 @@ li a:hover {
 
 .footer_text h1 {
   margin-bottom: 30px;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .footer_links_container {
   display: flex;
   flex-direction: row;
-  gap: 200px;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 100px);
   font-size: 20px;
   text-align: start;
 }
@@ -267,42 +290,158 @@ li a:hover {
 
 /*Media*/
 
-@media (max-width: 950px) {
-  .footer_links_container {
-    gap: 50px;
+@media (max-width: 800px) {
+  .head_container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 24px;
+    padding: 0 16px 12px;
   }
-  .image_and_text {
-    gap: 20px;
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .navbar {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar li {
+    margin: 0 16px;
+  }
+
+  .text_section_2 {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .hamburger,
+  .fast_food,
+  .binary {
+    flex: 1 1 280px;
+    max-width: none;
   }
 }
 
-@media (max-width: 800px) {
-  .footer_links_container {
-    gap: 50px;
+@media (max-width: 560px) {
+  .head_container {
+    justify-content: space-between;
+    gap: 0 12px;
   }
 
-  .image_and_text {
-    gap: 20px;
-  }
-  .image_and_text img {
-    width: 400px;
+  .logo {
+    margin-right: 0;
+    gap: 8px;
   }
 
-  .image_section img {
-    width: 400px;
+  .logo img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logo h1 {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 8px 0;
   }
 
   button {
-    width: 100px;
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 14px;
   }
+
+  .navbar li {
+    margin: 0 12px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+
+  .text_section {
+    margin-top: 28px;
+  }
+
+  .text_section p {
+    font-size: 17px;
+  }
+
+  .image_section {
+    margin-top: 28px;
+  }
+
+  .image_section img,
+  .image_and_text img {
+    border-width: 8px;
+    border-radius: 16px;
+  }
+
+  #text_center {
+    margin: 40px 16px 0;
+  }
+
+  #text_center h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .text_section_2 {
+    margin: 28px auto;
+    padding: 0 20px;
+    gap: 28px;
+  }
+
   .image_and_text {
-    display: block;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .image_and_text img {
+    width: 100%;
+  }
+
+  .footer {
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  .footer_text h1 {
+    margin-bottom: 20px;
+  }
+
+  .footer_links_container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 24px 32px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 8px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 360px) {
   .logo h1 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .navbar li {
+    margin: 0 8px;
+  }
+
+  .footer_links_container {
+    gap: 20px;
   }
 }
 
